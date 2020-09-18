@@ -13,47 +13,51 @@
 // (for now)
 struct Vector2
 {
-	float x;
-	float y;
+    float x;
+    float y;
 };
 
-// Game class
 class Game
 {
 public:
-	Game();
-	// Initialize the game
-	bool Initialize();
-	// Runs the game loop until the game is over
-	void RunLoop();
-	// Shutdown the game
-	void Shutdown();
+    Game();
+    // Initialize the game
+    bool Initialize();
+    // Runs the game loop until the game is over
+    void RunLoop();
+    // Shutdown the game
+    void Shutdown();
 private:
-	// Helper functions for the game loop
-	void ProcessInput();
-	void UpdateGame();
-	void GenerateOutput();
+    // Helper functions for the game loop
+    void ProcessInput();
+    void UpdateGame();
+    void GenerateOutput();
 
-	// Window created by SDL
-	SDL_Window* mWindow;
-	// Renderer for 2D drawing
-	SDL_Renderer* mRenderer;
-	// Number of ticks since start of game
-	Uint32 mTicksCount;
-	// Game should continue to run
-	bool mIsRunning;
+    // Window created by SDL
+    SDL_Window* mWindow;
+    // Renderer for 2D drawing
+    SDL_Renderer* mRenderer;
+    // Number of ticks since start of game
+    Uint32 mTicksCount;
+    // Game should continue to run
+    bool mIsRunning;
 
-	// Pong specific
-	// Direction of paddle
-	int mPaddleDir;
-	// Position of paddle
-	Vector2 mPaddlePos;
-	// Position of ball 1
-	Vector2 mBallPos;
-	// Position of ball 2
-	Vector2 mBallPos2;
-	// Velocity of ball 1
-	Vector2 mBallVel;
-	// Velocity of ball 2
-	Vector2 mBallVel2;
+    // Pong specific
+    // Direction of paddle
+    int mPaddleDir;
+    // Position of paddle
+    Vector2 mPaddlePos;
+
+    int mPaddleDir2;
+    // Position of paddle
+    Vector2 mPaddlePos2;
+
+    // Position of ball 1
+    Vector2 mBallPos;
+    // Position of ball 2
+    Vector2 mBallPos2;
+    // Velocity of ball 1
+    Vector2 mBallVel;
+    // Velocity of ball 2
+    Vector2 mBallVel2;
 };
